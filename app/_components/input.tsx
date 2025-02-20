@@ -1,7 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { Todo } from "..";
-
 interface InputProps {
   setTodos: Dispatch<SetStateAction<Todo[]>>;
   initialTodo?: Todo;
@@ -38,6 +37,7 @@ const Input = ({ initialTodo, setTodos, setInitialTodo }: InputProps) => {
     setTodo("");
   };
 
+
   return (
     <View
       style={{
@@ -47,6 +47,7 @@ const Input = ({ initialTodo, setTodos, setInitialTodo }: InputProps) => {
       }}
     >
       <TextInput
+
         style={{
           borderColor: "black",
           borderWidth: 1,
@@ -60,6 +61,7 @@ const Input = ({ initialTodo, setTodos, setInitialTodo }: InputProps) => {
       <Pressable
         style={{ backgroundColor: "green", borderRadius: 40, padding: 10 }}
         onPress={initialTodo?.id && initialTodo.todo ? handleEdit : handleAdd}
+      
       >
         <Text>{initialTodo?.id && initialTodo.todo ? "Edit" : "Add"}</Text>
       </Pressable>
